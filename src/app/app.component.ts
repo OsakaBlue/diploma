@@ -14,7 +14,6 @@ export class AppComponent {
 
 
 
-  // tslint:disable-next-line: typedef
   get form() {
     return this.formCom.controls;
   }
@@ -24,7 +23,6 @@ export class AppComponent {
     private dataService: DataService
   ) {}
 
-  // tslint:disable-next-line: use-lifecycle-interface
   ngOnInit(): void {
     this.formCom = this.fb.group({
       name: ['', [Validators.required]],
@@ -36,10 +34,9 @@ export class AppComponent {
 
   
 
-  // tslint:disable-next-line: typedef
-  addCom() {
+  addReview() {
     console.log(this.formCom.value);
-    this.dataService.addCom(this.formCom.value);
+    this.dataService.addReview(this.formCom.value);
     this.formCom.reset({
       name: '',
       email: '',
@@ -47,7 +44,6 @@ export class AppComponent {
     })
   }
 
-  // tslint:disable-next-line: typedef
   deleteCom(i: number) {
     this.dataService.deleteCom(i);
   }

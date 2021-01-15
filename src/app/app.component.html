@@ -1,7 +1,7 @@
 <div class="container">
   <div class="row">
       <div class="col-md-5">
-          <form [formGroup]="formCom" (ngSubmit)="addCom()">
+          <form [formGroup]="formCom" (ngSubmit)="addReview()">
               <div class="form-group">
                   <input type="text" class="form-control" placeholder="Name" formControlName="name"
                       [ngClass]="{'is-invalid': formCom.controls.name.errors && (formCom.controls.name.dirty || formCom.controls.name.touched)}">
@@ -16,7 +16,7 @@
                       Email is required
                   </div>
                   <div class="invalid-feedback" *ngIf="formCom.get('email').errors?.email">
-                      Invalid format email
+                      Email format is invalid
                   </div>
               </div>
               <div class="form-group">
@@ -26,7 +26,7 @@
                       Comment is required
                   </div>
                   <div class="invalid-feedback" *ngIf="formCom.get('comment').errors?.maxlength">
-                      The maximum comment length is 150 characters
+                      The maximum length of comment is 150 characters
                   </div>
               </div>
               <button type="submit" class="btn btn-primary" [disabled]="!formCom.valid">Add</button>

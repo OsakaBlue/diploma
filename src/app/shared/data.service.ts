@@ -14,7 +14,7 @@ export class DataService {
     return this.comments;
   }
 
-  addCom(com: any) {
+  addReview(com: any) {
     this.comments.push({
       name: com.name,
       email: com.email,
